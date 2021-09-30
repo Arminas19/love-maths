@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
     for(button of buttons){
 
         button.addEventListener('click', function(){
-            if(this.getAttribute('data-type') === 'Submit'     ){
+            if(this.getAttribute('data-type') === 'submit'     ){
                     alert('You clicked Submit');
             }
             else{

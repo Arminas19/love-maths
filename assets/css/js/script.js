@@ -48,8 +48,11 @@ let isCorrect = userAnswer === calculatedAnswer[0];
 
 if (isCorrect){
     alert("Hey, you got it right! :D ");
+ incrementScore();
+
 }else{
     alert(`Awwwww... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
+    incrementWrongAnswer();
 }
 runGame(calculatedAnswer[1]);
 }
@@ -77,12 +80,20 @@ if(operator === "+"){
     }
 
 
-
+/**
+ * gets the current score from the DOM and increments it.
+ */
 function incrementScore() {
-
+let oldScore = parseInt(document.getElementById('score').innerText);
+document.getElementById('score').innerText = ++oldScore;
 }
-
+/**
+ * gets the current tally for the incorrect answers from the DOM and increments it.
+ */
 function incrementWrongAnswer() {
+
+    let oldScore = parseInt(document.getElementById('incorrect').innerText);
+    document.getElementById('incorrect').innerText = ++oldScore;
 
 }
 
